@@ -189,7 +189,7 @@ div#category {
 
 /* 鼠标图标 */
 body {
-    cursor: url('/img/x1.cur'), auto;
+    cursor: url('/img/Arrow.cur'), auto;
 }
 
 a,
@@ -197,7 +197,7 @@ a,
 [type='reset']:not(:disabled),
 [type='submit']:not(:disabled),
 button:not(:disabled) {
-    cursor: url('/img/x2.cur'), auto !important;
+    cursor: url('/img/hand.cur'), auto !important;
 }
 
 /* md网站下划线 */

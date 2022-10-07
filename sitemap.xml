@@ -2,6 +2,15 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://luo16-miku.github.io/manifest.json</loc>
+    
+    <lastmod>2022-10-07</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
     <loc>https://luo16-miku.github.io/posts/85f8fc4d.html</loc>
     
     <lastmod>2022-09-05</lastmod>
@@ -19,19 +28,10 @@
     <priority>0.6</priority>
   </url>
   
-  <url>
-    <loc>https://luo16-miku.github.io/manifest.json</loc>
-    
-    <lastmod>2022-09-03</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
 
   <url>
     <loc>https://luo16-miku.github.io/</loc>
-    <lastmod>2022-09-18</lastmod>
+    <lastmod>2022-10-07</lastmod>
     <changefreq>daily</changefreq>
     <priority>1.0</priority>
   </url>
