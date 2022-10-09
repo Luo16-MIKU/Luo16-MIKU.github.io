@@ -16,8 +16,8 @@ function createtime() {
   let g = "";
   (g =
     r < 18 && r >= 9
-      ? `<img class='boardsign' src='/img/32.png' title='没钱啊 呜呜呜~~~'><span class='textTip'> <br> 本站居然运行了 ${a} 天</span><span id='runtime'> ${r} 小时 ${i} 分 ${l} 秒 </span> `
-      : `<img class='boardsign' src='/img/32.png' title='没时间啊 嘤嘤嘤~~~'><span class='textTip'> <br> 本站居然运行了 ${a} 天</span><span id='runtime'> ${r} 小时 ${i} 分 ${l} 秒 </span> `),
+      ? `<img class='boardsign' src='/img/favicon.png' title='没钱啊 呜呜呜~~~'><span class='textTip'> <br> 本站居然运行了 ${a} 天</span><span id='runtime'> ${r} 小时 ${i} 分 ${l} 秒 </span> `
+      : `<img class='boardsign' src='/img/favicon.png' title='没时间啊 嘤嘤嘤~~~'><span class='textTip'> <br> 本站居然运行了 ${a} 天</span><span id='runtime'> ${r} 小时 ${i} 分 ${l} 秒 </span> `),
     document.getElementById("workboard") &&
       (document.getElementById("workboard").innerHTML = g);
 }
