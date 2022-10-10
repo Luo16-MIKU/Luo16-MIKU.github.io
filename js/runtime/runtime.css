@@ -16,6 +16,10 @@ div#runtime {
 }
 #ghbdages .github-badge img {
     height: 20px;
+   
+}
+.boardsign{
+    width: 120px;
 }
 @-moz-keyframes flashlight {
     from {
