@@ -2,6 +2,24 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://miku-39.love/posts/fd29bee3.html</loc>
+    
+    <lastmod>2022-10-11</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://miku-39.love/posts/ab028f3a.html</loc>
+    
+    <lastmod>2022-10-11</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
     <loc>https://miku-39.love/link/index.html</loc>
     
     <lastmod>2022-10-10</lastmod>
@@ -75,6 +93,13 @@
   
   <url>
     <loc>https://miku-39.love/tags/life/</loc>
+    <lastmod>2022-10-11</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://miku-39.love/tags/%E6%8A%80%E6%9C%AF-%E8%87%AA%E7%94%A8-%E7%AC%94%E8%AE%B0/</loc>
     <lastmod>2022-10-11</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
