@@ -6,10 +6,9 @@
 } */
 @font-face {
     font-family: ZhuZiAYuanJWD;
-    src: url(https://npm.elemecdn.com/anzhiyu-blog@1.1.6/fonts/ZhuZiAWan.woff2);
-    font-display: swap;
-    font-weight: lighter;
+    src: url(../img/站酷高端黑.ttf);
 }
+
 
 div#menus {
     font-family: 'ZhuZiAYuanJWD';
@@ -17,8 +16,19 @@ div#menus {
 
 h1#site-title {
     font-family: ZhuZiAYuanJWD;
-    font-size: 3em !important;
+    font-size: 3.8em !important;
+    color: #2edfe6 !important;
+    font-weight: normal !important;
+    
 }
+
+#site-info{
+    animation: hue 2.5s linear infinite;
+    background: rgba(0, 0, 0, 0.36g);
+    background-image:linear-gradient(90deg,#8bdeda10,#43add099,#e17dc299,#e17dc299,#e17dc299,#998ee099,#ef939310);
+    backdrop-filter:80px;
+}
+
 
 a.article-title,
 a.blog-slider__title,
@@ -331,3 +341,21 @@ button:not(:disabled) {
 #article-container figure.highlight {
     border-radius: 10px;
 }
+
+#site-subtitle #subtitle{
+    color: #2edfe6;
+    font-family: 'ZhuZiAYuanJWD';
+
+}
+#nav {
+    
+    font-size: 1.5em !important;
+}
+
+#site-name{
+    font-size: 1.6em !important;
+    font-family: 'ZhuZiAYuanJWD';
+
+}
+
+
