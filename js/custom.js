@@ -242,11 +242,11 @@ var titleTime;
 document.addEventListener("visibilitychange", function () {
   if (document.hidden) {
     //离开当前页面时标签显示内容
-    document.title = "(σﾟ∀ﾟ)σ..:*☆ 欢迎来到我的小站";
+    document.title = "∑(っ°Д°;)っ卧槽，不见了";
     clearTimeout(titleTime);
   } else {
     //返回当前页面时标签显示内容
-    document.title = "∑(っ°Д°;)っ卧槽，不见了" + OriginTitile;
+    document.title = "(σﾟ∀ﾟ)σ..:*☆ 欢迎来到我的小站" + OriginTitile;
     //两秒后变回正常标题
     titleTime = setTimeout(function () {
       document.title = OriginTitile;
