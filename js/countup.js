@@ -207,3 +207,4 @@ var CountUp = function (target, startVal, endVal, decimals, duration, options) {
       self.printValue(self.startVal);
     }
   };
+
