@@ -6558,16 +6558,8 @@ blockquote.pullquote.right {
     align-items: center;
     justify-content: space-between;
   }
-  .author-content-item .content-bottom .icon-group {
-    display: flex;
-    position: relative;
-  }
-  .author-content-item .content-bottom .icon-group i {
-    display: inline-block;
-    width: 143px;
-    height: 18px;
-    margin-right: 0.5rem;
-  }
+
+
   /* 游戏加载 */
   .icon-pos-mid {
     background: url(https://s2.loli.net/2023/03/28/OznJTHL1txFaQeP.png);
