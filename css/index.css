@@ -6215,6 +6215,7 @@ blockquote.pullquote.right {
     position: absolute;
     min-width: 100%;
     object-fit: cover;
+    height: 120%;
     transition: 0.6s;
     animation: coverIn 2s ease-out forwards;
     transition: transform 2s ease-out !important;
@@ -6274,7 +6275,7 @@ blockquote.pullquote.right {
     align-items: center;
     flex-wrap: wrap;
     height: -webkit-fill-available;
-    height: 40%;
+    height: 50%;
   }
   .author-content-item.selfInfo div {
     display: flex;
@@ -6543,7 +6544,7 @@ blockquote.pullquote.right {
     transition: 2s ease-in-out;
   }
   .author-content-item.game-yuanshen {
-    background: url(https://s2.loli.net/2023/03/28/bXMSGn6JUwqg4Kh.png) no-repeat top;
+    background: url(https://s2.loli.net/2023/03/28/k2ZA7wql4L6EjWI.jpg) no-repeat top;
     background-size: cover;
     min-height: 300px;
     overflow: hidden;
@@ -6569,7 +6570,7 @@ blockquote.pullquote.right {
   }
   /* 游戏加载 */
   .icon-pos-mid {
-    background: url(https://img02.anzhiy.cn/adminuploads/1/2022/09/25/632fb9cecfc8c.png);
+    background: url(https://s2.loli.net/2023/03/28/OznJTHL1txFaQeP.png);
   }
   .author-content-item.game-yuanshen::after {
     box-shadow: 0 -69px 203px 11px #575d8b inset;
@@ -6583,11 +6584,11 @@ blockquote.pullquote.right {
   
   .author-content-item.comic-content {
     width: 39%;
-    background: url(https://npm.elemecdn.com/anzhiyu-blog@1.1.6/img/post/common/violet.jpg) no-repeat top;
+    background: url(https://s2.loli.net/2023/03/28/wvFhM6DzrW2fOIm.png) no-repeat top;
     background-size: cover;
     min-height: 300px;
     overflow: hidden;
-    color: violet;
+    color: #f8a5c2;
   }
   .author-content-item.comic-content::after {
     box-shadow: 0 -48px 203px 11px #fbe9b8 inset;
@@ -6600,17 +6601,17 @@ blockquote.pullquote.right {
   }
   
   .author-content-item.like-technology {
-    background: url(https://img02.anzhiy.cn/adminuploads/1/2022/09/24/632f0dd8f33c6.webp) no-repeat;
+    background: url(https://s2.loli.net/2022/11/21/6eySOft8KQqd7Ex.png) center;
     background-size: cover;
     min-height: 230px;
     color: var(--anzhiyu-white);
   }
   
   .author-content-item.like-music {
-    background: url(https://p2.music.126.net/Mrg1i7DwcwjWBvQPIMt_Mg==/79164837213438.jpg) no-repeat top;
-    background-size: cover;
+    background: url(https://s2.loli.net/2023/03/28/TyjLPI3zwCUhKMA.png) center ;
+    background-size: 66%;
     min-height: 400px;
-    color: var(--anzhiyu-white);
+    color:#39C5BB ;
     overflow: hidden;
   }
   
@@ -6846,7 +6847,7 @@ blockquote.pullquote.right {
     filter: drop-shadow(0 -500px 0 var(--loadingbar-prospect-color));
     width: 500px;
     height: 62.5px;
-    background: url("https://yuanshen.site/imgs/loading-bar.png") no-repeat left 100%;
+    background: url("https://s2.loli.net/2023/03/28/POfh4Mx2jt7SuBp.png") no-repeat left 100%;
     background-size: 500px 62.5px;
     background-position-x: 0;
   }
@@ -7013,12 +7014,12 @@ blockquote.pullquote.right {
     justify-content: center;
     font-family: 'ZhuZiAYuanJWD';
   }
-  .hello-about h1 p {
-   
+  .hello-about h1 div br {
+    height:20px;
   }
   @media (min-width: 419px) {
     .hello-about h1 {
-      font-size: calc(calc((0.0989119683 * 38vw + (28.5558852621px))));
+      font-size: calc(calc((0.0989119683 * 20vw + (28.5558852621px))));
     }
   }
 
