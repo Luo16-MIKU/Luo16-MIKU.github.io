@@ -5926,7 +5926,7 @@ blockquote.pullquote.right {
   }
   
   #web_bg ~ .page:has(#about-page) {
-    background: var(--anzhiyu-background);
+    background: linear-gradient(24deg,#90f7ec,#32ccbc);
   }
   
   #about-page .author-box {
@@ -6025,7 +6025,7 @@ blockquote.pullquote.right {
     font-family: Helvetica;
     line-height: 1.06;
     letter-spacing: -0.02em;
-    color: var(--font-color);
+    color: #0d3538;
     margin-top: 0;
     width: 78%;
   }
@@ -6286,7 +6286,7 @@ blockquote.pullquote.right {
     flex-wrap: wrap;
     height: -webkit-fill-available;
     height: 50%;
-    background: linear-gradient(204deg,#f0ff00,#58cffb);
+    background:linear-gradient(65deg,#f6ceec,#d939cd);
   }
   .author-content-item.selfInfo div {
     display: flex;
@@ -6509,7 +6509,7 @@ blockquote.pullquote.right {
     flex-direction: column;
     justify-content: center;
     width: 39%;
-    background: linear-gradient(135deg,#83a4d4,#b6fbff);
+    background: linear-gradient(62deg,#fdeb71,#f8d800);
   }
   .author-content-item .author-content-item-tips {
     opacity: 0.8;
@@ -6529,7 +6529,7 @@ blockquote.pullquote.right {
     align-items: flex-start;
     flex-direction: column;
     justify-content: center;
-    background: linear-gradient(120deg, #ff27e8 0, #ff8000 100%);
+    background: linear-gradient(345deg,#81fbb8,#28c76f);
     color: var(--anzhiyu-white);
     background-size: 200%;
     animation: gradient 15s ease infinite;
@@ -6615,7 +6615,7 @@ blockquote.pullquote.right {
     background: url(https://s2.loli.net/2023/03/28/TyjLPI3zwCUhKMA.png) center ;
     background-size: 66%;
     min-height: 400px;
-    color:#39C5BB ;
+    color:#00ffb6 ;
     overflow: hidden;
   }
   
@@ -6807,9 +6807,6 @@ blockquote.pullquote.right {
     height: 16px;
     margin-right: 8px;
     border-radius: 16px;
-  }
-  .author-content-item.careers .careers-item .name {
-    color: var(--anzhiyu-secondtext);
   }
 
 :root {

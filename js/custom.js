@@ -1,17 +1,23 @@
-//get请求
-$.ajax({
-    type: 'get',
-    url: 'https://apis.map.qq.com/ws/location/v1/ip',
-    data: {
-        key: 'MECBZ-PVH6S-WYZOC-6IR74-I5BHJ-QQBDR',
-        output: 'jsonp',
-    },
-    dataType: 'jsonp',
-    success: function (res) {
-        ipLoacation = res;
-        showWelcome();
-    }
-})
+function fe(){
+    function killErrors() { return true; } 
+    window.onerror = killErrors();
+}
+window.onload=function(){setInterval(  fe() , 50)}
+
+// //get请求
+// $.ajax({
+//     type: 'get',
+//     url: 'https://apis.map.qq.com/ws/location/v1/ip',
+//     data: {
+//         key: 'MECBZ-PVH6S-WYZOC-6IR74-I5BHJ-QQBDR',
+//         output: 'jsonp',
+//     },
+//     dataType: 'jsonp',
+//     success: function (res) {
+//         ipLoacation = res;
+//         showWelcome();
+//     }
+// })
 
 //根据经纬度计算两点距离(点1经度,点1纬度,点2经度,点2纬度)
 function getDistance(e1, n1, e2, n2) {
@@ -253,3 +259,4 @@ document.addEventListener("visibilitychange", function () {
     }, 2000);
   }
 });
+
