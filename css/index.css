@@ -6077,7 +6077,7 @@ blockquote.pullquote.right {
   #about-page .about-statistic {
     min-height: 380px;
     width: 39%;
-    background: url(https://img02.anzhiy.cn/adminuploads/1/2022/09/23/632d634f8376d.jpg) no-repeat top;
+    background: url(https://s2.loli.net/2023/03/29/gXkuP8MZDBrOvyn.gif) no-repeat top;
     background-size: cover;
     color: var(--anzhiyu-white);
     overflow: hidden;
@@ -6934,7 +6934,6 @@ blockquote.pullquote.right {
 .hello-about {
     margin: 20px auto;
     border-radius: 24px;
-    background: linear-gradient(135deg,#41295a,#2f0743)!important;
     border: var(--style-border-always);
     box-shadow: var(--anzhiyu-shadow-border);
     position: relative;
