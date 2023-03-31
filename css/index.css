@@ -6808,6 +6808,9 @@ blockquote.pullquote.right {
     margin-right: 8px;
     border-radius: 16px;
   }
+  .author-content-item.careers .careers-item .name {
+    color: var(--anzhiyu-secondtext);
+  }
 
 :root {
     --loadingbar-background-color: #2c2b30;

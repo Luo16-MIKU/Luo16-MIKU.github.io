@@ -238,15 +238,15 @@ const btf = {
         }
       })
 
-      // if (!window.fancyboxRun) {
-      //   Fancybox.bind('[data-fancybox]', {
-      //     Hash: false,
-      //     Thumbs: {
-      //       autoStart: false
-      //     }
-      //   })
-      //   window.fancyboxRun = true
-      // }
+      if (!window.fancyboxRun) {
+        Fancybox.bind('[data-fancybox]', {
+          Hash: false,
+          Thumbs: {
+            autoStart: false
+          }
+        })
+        window.fancyboxRun = true
+      }
     }
   },
 

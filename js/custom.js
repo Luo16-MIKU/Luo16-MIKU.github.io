@@ -1,8 +1,3 @@
-function fe(){
-    function killErrors() { return true; } 
-    window.onerror = killErrors();
-}
-window.onload=function(){setInterval(  fe() , 50)}
 
 // //get请求
 // $.ajax({
