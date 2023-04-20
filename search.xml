@@ -17,27 +17,6 @@
     
     
     <entry>
-      <title>东西能跑就不要改,会变得不幸</title>
-      <link href="/posts/97f2d140.html"/>
-      <url>/posts/97f2d140.html</url>
-      
-        <content type="html"><![CDATA[<h1 id="麻了"><a href="#麻了" class="headerlink" title="麻了"></a>麻了</h1><h2 id="从博客创立之初就挖的坑-—-关于我页面"><a href="#从博客创立之初就挖的坑-—-关于我页面" class="headerlink" title="从博客创立之初就挖的坑 — 关于我页面"></a>从博客创立之初就挖的坑 — 关于我页面</h2><p><strong>前不久千呼万唤始出来了, 但</strong><br><strong>我之前操作系统没吧源码上传搞好只搞了个生成的页面上传 这是前因</strong><br><strong>然后我 做<del>抄袭</del>完关于我页面后, 闲来无事想修一下bug</strong><br><strong>首先 我发现了51la统计的数据不会显示,并且我在翻阅了 鱼佬 和heo老的博客, 发现他们的博客好像也没有显示我就想着吧 51la统计的验证代码啥的都删了, 删了之后 我又看到一堆Bug手贱点进去一看, 好像是源文件的pug还是哪里报错了,但是我可悲的没有记住, 我在本地文件删删改改 改到最后我嫌页面太乱吧vs的窗口关了导致我撤回不了 以至于导致了最直接的结果 — 关于我页面的动效跟踪不到鼠标了, 改了两三天基本上有关于关于我页面的东西全部重做了也没有用</strong></p><h2 id="所以-我摆了"><a href="#所以-我摆了" class="headerlink" title="所以 我摆了"></a>所以 我摆了</h2><p>等最近忙完了,整个博客重写一遍 顺便再抄袭一下鱼佬 也写一篇博客重装日记 今年内 (我先插个旗子在这里)</p><div class="tip warning faa-horizontal animated-hover"><p>最后提醒, 代码能跑就不要管他!!!!!!!!!</p></div><div class="tip warning faa-horizontal animated-hover"><p>最后提醒, 非要动记得备份!!!!!!!!!</p></div>]]></content>
-      
-      
-      
-        <tags>
-            
-            <tag> 教训 </tag>
-            
-            <tag> 生活 </tag>
-            
-        </tags>
-      
-    </entry>
-    
-    
-    
-    <entry>
       <title>挖坑_博客相关</title>
       <link href="/posts/da74aa07.html"/>
       <url>/posts/da74aa07.html</url>
@@ -51,21 +30,19 @@
     
     
     <entry>
-      <title>挖坑_Spring基础_下周一前填坑</title>
-      <link href="/posts/f7f80643.html"/>
-      <url>/posts/f7f80643.html</url>
+      <title>东西能跑就不要改,会变得不幸</title>
+      <link href="/posts/97f2d140.html"/>
+      <url>/posts/97f2d140.html</url>
       
-        <content type="html"><![CDATA[]]></content>
+        <content type="html"><![CDATA[<h1 id="麻了"><a href="#麻了" class="headerlink" title="麻了"></a>麻了</h1><h2 id="从博客创立之初就挖的坑-—-关于我页面"><a href="#从博客创立之初就挖的坑-—-关于我页面" class="headerlink" title="从博客创立之初就挖的坑 — 关于我页面"></a>从博客创立之初就挖的坑 — 关于我页面</h2><p><strong>前不久千呼万唤始出来了, 但</strong><br><strong>我之前操作系统没吧源码上传搞好只搞了个生成的页面上传 这是前因</strong><br><strong>然后我 做<del>抄袭</del>完关于我页面后, 闲来无事想修一下bug</strong><br><strong>首先 我发现了51la统计的数据不会显示,并且我在翻阅了 鱼佬 和heo老的博客, 发现他们的博客好像也没有显示我就想着吧 51la统计的验证代码啥的都删了, 删了之后 我又看到一堆Bug手贱点进去一看, 好像是源文件的pug还是哪里报错了,但是我可悲的没有记住, 我在本地文件删删改改 改到最后我嫌页面太乱吧vs的窗口关了导致我撤回不了 以至于导致了最直接的结果 — 关于我页面的动效跟踪不到鼠标了, 改了两三天基本上有关于关于我页面的东西全部重做了也没有用</strong></p><h2 id="所以-我摆了"><a href="#所以-我摆了" class="headerlink" title="所以 我摆了"></a>所以 我摆了</h2><p>等最近忙完了,整个博客重写一遍 顺便再抄袭一下鱼佬 也写一篇博客重装日记 今年内 (我先插个旗子在这里)</p><div class="tip warning faa-horizontal animated-hover"><p>最后提醒, 代码能跑就不要管他!!!!!!!!!</p></div><div class="tip warning faa-horizontal animated-hover"><p>最后提醒, 非要动记得备份!!!!!!!!!</p></div>]]></content>
       
       
       
         <tags>
             
-            <tag> 技术 </tag>
+            <tag> 教训 </tag>
             
-            <tag> 笔记 </tag>
-            
-            <tag> java </tag>
+            <tag> 生活 </tag>
             
         </tags>
       
