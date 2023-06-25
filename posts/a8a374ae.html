@@ -1,0 +1,463 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"><title>Jeecg框架基础配置 | 九九九感冒绫</title><meta name="keywords" content="技术,笔记,java,jeecg-boot"><meta name="author" content="九九九感冒绫,1403315011@qq.com"><meta name="copyright" content="九九九感冒绫"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="Jeecg是什么？JEECG是一款基于BPM的低代码平台！前后端分离架构 SpringBoot 2.x，SpringCloud，Ant Design&amp;Vue，Mybatis-plus，Shiro，JWT，支持微服务。强大的代码生成器让前后端代码一键生成，实现低代码开发！ JeecgBoot引领新低代码开发模式 OnlineCoding-&gt; 代码生成器-&gt; 手工MERGE， 帮助">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Jeecg框架基础配置">
+<meta property="og:url" content="https://miku-39.love/posts/a8a374ae.html">
+<meta property="og:site_name" content="九九九感冒绫">
+<meta property="og:description" content="Jeecg是什么？JEECG是一款基于BPM的低代码平台！前后端分离架构 SpringBoot 2.x，SpringCloud，Ant Design&amp;Vue，Mybatis-plus，Shiro，JWT，支持微服务。强大的代码生成器让前后端代码一键生成，实现低代码开发！ JeecgBoot引领新低代码开发模式 OnlineCoding-&gt; 代码生成器-&gt; 手工MERGE， 帮助">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://s2.loli.net/2023/06/25/VsgOiHzPrWZ43QI.png">
+<meta property="article:published_time" content="2023-06-25T07:12:26.000Z">
+<meta property="article:modified_time" content="2023-06-25T07:13:18.613Z">
+<meta property="article:author" content="九九九感冒绫">
+<meta property="article:tag" content="技术">
+<meta property="article:tag" content="笔记">
+<meta property="article:tag" content="java">
+<meta property="article:tag" content="jeecg-boot">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://s2.loli.net/2023/06/25/VsgOiHzPrWZ43QI.png"><link rel="shortcut icon" href="/img/favicon.png"><link rel="canonical" href="https://miku-39.love/posts/a8a374ae"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.min.css" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = { 
+  root: '/',
+  algolia: undefined,
+  localSearch: {"path":"/search.xml","preload":false,"languages":{"hits_empty":"找不到您查询的内容：${query}"}},
+  translate: undefined,
+  noticeOutdate: undefined,
+  highlight: {"plugin":"highlighjs","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false},
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '',
+  date_suffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: undefined,
+  lightbox: 'fancybox',
+  Snackbar: undefined,
+  source: {
+    justifiedGallery: {
+      js: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery/dist/fjGallery.min.js',
+      css: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery/dist/fjGallery.min.css'
+    }
+  },
+  isPhotoFigcaption: false,
+  islazyload: false,
+  isAnchor: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: 'Jeecg框架基础配置',
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: false,
+  isToc: true,
+  postUpdate: '2023-06-25 15:13:18'
+}</script><noscript><style type="text/css">
+  #nav {
+    opacity: 1
+  }
+  .justified-gallery img {
+    opacity: 1
+  }
+
+  #recent-posts time,
+  #post-meta time {
+    display: inline !important
+  }
+</style></noscript><script>(win=>{
+    win.saveToLocal = {
+      set: function setWithExpiry(key, value, ttl) {
+        if (ttl === 0) return
+        const now = new Date()
+        const expiryDay = ttl * 86400000
+        const item = {
+          value: value,
+          expiry: now.getTime() + expiryDay,
+        }
+        localStorage.setItem(key, JSON.stringify(item))
+      },
+
+      get: function getWithExpiry(key) {
+        const itemStr = localStorage.getItem(key)
+
+        if (!itemStr) {
+          return undefined
+        }
+        const item = JSON.parse(itemStr)
+        const now = new Date()
+
+        if (now.getTime() > item.expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return item.value
+      }
+    }
+  
+    win.getScript = url => new Promise((resolve, reject) => {
+      const script = document.createElement('script')
+      script.src = url
+      script.async = true
+      script.onerror = reject
+      script.onload = script.onreadystatechange = function() {
+        const loadState = this.readyState
+        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+        script.onload = script.onreadystatechange = null
+        resolve()
+      }
+      document.head.appendChild(script)
+    })
+  
+      win.activateDarkMode = function () {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      win.activateLightMode = function () {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+      const t = saveToLocal.get('theme')
+    
+          if (t === 'dark') activateDarkMode()
+          else if (t === 'light') activateLightMode()
+        
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
+    
+    const detectApple = () => {
+      if(/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)){
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+    })(window)</script><meta name="baidu-site-verification" content="code-EtDFROncUj" /><link rel="stylesheet" href="/css/custom.css" media="defer" onload="this.media='all'"><link rel="stylesheet" href="/css/nav_menu.css" media="defer" onload="this.media='all'"><!-- hexo injector head_end start --><link rel="stylesheet" href="https://cdn.cbd.int/hexo-butterfly-clock-anzhiyu/lib/clock.min.css" /><link rel="stylesheet" href="/js/runtime/runtime.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://cdn.cbd.int/hexo-butterfly-swiper-anzhiyu@1.0.4/lib/swiper.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://cdn.cbd.int/hexo-butterfly-swiper-anzhiyu@1.0.4/lib/swiperstyle.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://cdn.cbd.int/hexo-butterfly-wowjs/lib/animate.min.css" media="print" onload="this.media='screen'"><link rel="stylesheet" href="https://cdn.cbd.int/hexo-butterfly-tag-plugins-plus@latest/lib/assets/font-awesome-animation.min.css" media="defer" onload="this.media='all'"><link rel="stylesheet" href="https://cdn.cbd.int/hexo-butterfly-tag-plugins-plus@latest/lib/tag_plugins.css" media="defer" onload="this.media='all'"><script src="https://cdn.cbd.int/hexo-butterfly-tag-plugins-plus@latest/lib/assets/carousel-touch.js"></script><link rel="stylesheet" href="https://cdn.cbd.int/hexo-filter-gitcalendar/lib/gitcalendar.css" media="print" onload="this.media='all'"><!-- hexo injector head_end end --><meta name="generator" content="Hexo 6.2.0"></head><body><div id="loading-box"><div class="loading-left-bg"></div><div class="loading-right-bg"></div><div class="spinner-box"><div class="configure-border-1"><div class="configure-core"></div></div><div class="configure-border-2"><div class="configure-core"></div></div><div class="loading-word">加载中...</div></div></div><div id="web_bg"></div><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src="https://s2.loli.net/2022/10/18/soq82lvxakjeHB1.jpg" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="sidebar-site-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">15</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">10</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">0</div></a></div><hr/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/comments/"><i class="fa-fw fas fa-envelope"></i><span> 留言板</span></a></div><div class="menus_item"><a class="site-page" href="/Aboutme/"><i class="fa-fw fas fa-heart"></i><span> 关于我</span></a></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 大佬们(友链)</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div></div></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header" style="background-image: url('https://s2.loli.net/2023/06/25/VsgOiHzPrWZ43QI.png')"><nav id="nav"><span id="blog_name"><div class="back-home-button" tabindex="-1"><i class="back-home-button-icon fas fa-grip-vertical"></i><div class="back-menu-list-groups"><div class="back-menu-list-group"><div class="back-menu-list-title">网页</div><div class="back-menu-list"><a class="back-menu-item" href="/" title="前往博客主页" target="_blank" one-link-mark="yes"><img class="back-menu-item-icon" src="https://s2.loli.net/2022/10/18/soq82lvxakjeHB1.jpg"/><span class="back-menu-item-text">博客</span></a></div></div><div class="back-menu-list-group"><div class="back-menu-list-title">项目</div><div class="back-menu-list"><a class="back-menu-item" href="#" title="暂无" target="_blank" rel="noopener nofollow" one-link-mark="yes"><img class="back-menu-item-icon" src="https://s2.loli.net/2023/02/08/GJnR1C74rbigBQv.jpg"/><span class="back-menu-item-text">暂无</span></a></div></div></div></div><a id="site-name" href="/"><div class="title">九九九感冒绫</div><i class="fa-solid fa-house"></i></a></span><div class="mask-name-container"><center id="name-container"><a id="page-name" href="javascript:btf.scrollToDest(0, 500)">道可道，非常道   名可名，非常名</a></center></div><div id="menus"><div class="nav-button" id="search-button"><a class="site-page social-icon search"><i class="fas fa-search fa-fw"></i><span> 搜索</span></a></div><div class="nav-button" id="darkmode_navswitch"><a class="darkmode_switchbutton" type="button" title="浅色和深色模式转换" onclick="rmf.switchDarkMode()"><i class="fas fa-adjust"></i></a></div><div class="nav-button" id="nav-totop"><a class="totopbtn"><i class="fas fa-arrow-up"></i><span id="percent" onclick="btf.scrollToDest(0,500)">0</span></a></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/comments/"><i class="fa-fw fas fa-envelope"></i><span> 留言板</span></a></div><div class="menus_item"><a class="site-page" href="/Aboutme/"><i class="fa-fw fas fa-heart"></i><span> 关于我</span></a></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 大佬们(友链)</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div></div><div id="toggle-menu"><a class="site-page"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="post-info"><h1 class="post-title">Jeecg框架基础配置</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2023-06-25T07:12:26.000Z" title="发表于 2023-06-25 15:12:26">2023-06-25</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2023-06-25T07:13:18.613Z" title="更新于 2023-06-25 15:13:18">2023-06-25</time></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-wordcount"><i class="far fa-file-word fa-fw post-meta-icon"></i><span class="post-meta-label">字数总计:</span><span class="word-count">872</span><span class="post-meta-separator">|</span><i class="far fa-clock fa-fw post-meta-icon"></i><span class="post-meta-label">阅读时长:</span><span>3分钟</span></span><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title="Jeecg框架基础配置"><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">阅读量:</span><span id="busuanzi_value_page_pv"><i class="fa-solid fa-spinner fa-spin"></i></span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container"><h1 id="Jeecg是什么？"><a href="#Jeecg是什么？" class="headerlink" title="Jeecg是什么？"></a>Jeecg是什么？</h1><p>JEECG是一款基于BPM的低代码平台！前后端分离架构 SpringBoot 2.x，SpringCloud，Ant Design&amp;Vue，Mybatis-plus，Shiro，JWT，支持微服务。强大的代码生成器让前后端代码一键生成，实现低代码开发！ JeecgBoot引领新低代码开发模式 OnlineCoding-&gt; 代码生成器-&gt; 手工MERGE， 帮助Java项目解决70%的重复工作，让开发更多关注业务，既能快速提高效率，节省研发成本，同时又不失灵活性！一系列低代码能力：Online表单、Online报表、Online图表、表单设计、流程设计、报表设计、大屏设计 等等…</p>
+<h1 id="配置环境安装"><a href="#配置环境安装" class="headerlink" title="配置环境安装"></a>配置环境安装</h1><h4 id="需要"><a href="#需要" class="headerlink" title="需要!"></a><strong>需要!</strong></h4><ul>
+<li><strong>Lombok 插件</strong></li>
+<li><strong>热部署JRebel</strong></li>
+<li><strong>maven</strong></li>
+<li><strong>redis64</strong></li>
+<li><strong>mysql(其他数据库也ok)</strong></li>
+<li><strong>后台源码 地址：<a target="_blank" rel="noopener" href="https://github.com/jeecgboot/jeecg-boot">https://github.com/jeecgboot/jeecg-boot</a></strong></li>
+<li><strong>前端源码 地址：<a target="_blank" rel="noopener" href="https://github.com/jeecgboot/jeecgboot-vue3">https://github.com/jeecgboot/jeecgboot-vue3</a></strong></li>
+<li><strong>APP配套框架 地址: <a target="_blank" rel="noopener" href="https://github.com/jeecgboot/jeecg-uniapp">https://github.com/jeecgboot/jeecg-uniapp</a></strong></li>
+</ul>
+<h2 id="后台配置及安装"><a href="#后台配置及安装" class="headerlink" title="后台配置及安装"></a>后台配置及安装</h2><h4 id="第一步，-下载源码【引用】解压源码后导入Idea-其他平台没用过不在此次笔记"><a href="#第一步，-下载源码【引用】解压源码后导入Idea-其他平台没用过不在此次笔记" class="headerlink" title="第一步， 下载源码【引用】解压源码后导入Idea(其他平台没用过不在此次笔记)"></a><strong>第一步， 下载源码【引用】解压源码后导入Idea(其他平台没用过不在此次笔记)</strong></h4><h4 id="第二步，在最外层的pom-xml中引入Lombok-先看看有没有再引入"><a href="#第二步，在最外层的pom-xml中引入Lombok-先看看有没有再引入" class="headerlink" title="第二步，在最外层的pom.xml中引入Lombok (先看看有没有再引入)"></a><strong>第二步，在最外层的<code>pom.xml</code>中引入<code>Lombok </code>(先看看有没有再引入)</strong></h4><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&lt;dependency&gt;</span><br><span class="line">        &lt;groupId&gt;org.projectlombok&lt;/groupId&gt;</span><br><span class="line">        &lt;artifactId&gt;lombok&lt;/artifactId&gt;</span><br><span class="line">        &lt;version&gt;1.16.6&lt;/version&gt;</span><br><span class="line">&lt;/dependency&gt;</span><br></pre></td></tr></table></figure>
+
+<h4 id="第三步，-打开你的Maven安装路径-conf-settings-xml编辑Maven配置文件settings-xml然后添加"><a href="#第三步，-打开你的Maven安装路径-conf-settings-xml编辑Maven配置文件settings-xml然后添加" class="headerlink" title="第三步， 打开你的Maven安装路径\conf\settings.xml编辑Maven配置文件settings.xml然后添加"></a><strong>第三步， 打开<code>你的Maven安装路径\conf\settings.xml</code>编辑<code>Maven</code>配置文件<code>settings.xml</code>然后添加</strong></h4><figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">&lt;mirror&gt;</span></span><br><span class="line">          <span class="string">&lt;id&gt;nexus-aliyun&lt;/id&gt;</span></span><br><span class="line">          <span class="string">&lt;mirrorOf&gt;*,!jeecg,!jeecg-snapshots,!getui-nexus&lt;/mirrorOf&gt;</span></span><br><span class="line">          <span class="string">&lt;name&gt;Nexus</span> <span class="string">aliyun&lt;/name&gt;</span></span><br><span class="line">          <span class="string">&lt;url&gt;http://maven.aliyun.com/nexus/content/groups/public&lt;/url&gt;</span></span><br><span class="line">      <span class="string">&lt;/mirror&gt;</span> </span><br></pre></td></tr></table></figure>
+<p><strong>配置jeecg的Maven私服(否则导包全是报错)， 然后刷新Maven</strong></p>
+<p><img src="https://s2.loli.net/2023/06/25/R2sYIdxVwNat6pb.png" alt="image-20230609161657069.png"></p>
+<h4 id="第四步，用mysql导入sql文件"><a href="#第四步，用mysql导入sql文件" class="headerlink" title="第四步，用mysql导入sql文件"></a><strong>第四步，用mysql导入sql文件</strong></h4><p><img src="https://s2.loli.net/2023/06/25/6GdnE5pKNqfyi7b.png" alt="image-20230609162521993"></p>
+<h4 id="第五步，-安装并打开Redis-怎么安装？-【redis地址】"><a href="#第五步，-安装并打开Redis-怎么安装？-【redis地址】" class="headerlink" title="第五步， 安装并打开Redis 怎么安装？ 【redis地址】"></a><strong>第五步， 安装并打开Redis 怎么安装？ 【redis地址】</strong></h4><h4 id="第六步-打开jeecg-module-system-jeecg-system-start-src-main-resources-application-dev-yml配置文件"><a href="#第六步-打开jeecg-module-system-jeecg-system-start-src-main-resources-application-dev-yml配置文件" class="headerlink" title="第六步 打开jeecg-module-system/jeecg-system-start/src/main/resources/application-dev.yml配置文件"></a><strong>第六步 打开<code>jeecg-module-system/jeecg-system-start/src/main/resources/application-dev.yml</code>配置文件</strong></h4><p><img src="https://s2.loli.net/2023/06/25/dgFumopDWH3xPU7.png" alt="image-20230609162842124"></p>
+<p><strong>再132行找到数据源配置配置数据库连接字符串等</strong></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">datasource:</span><br><span class="line">  master:</span><br><span class="line">    url: jdbc:mysql://127.0.0.1:3306/jeecg-boot?characterEncoding=UTF-8&amp;useUnicode=true&amp;useSSL=false&amp;tinyInt1isBit=false&amp;allowPublicKeyRetrieval=true&amp;serverTimezone=Asia/Shanghai</span><br><span class="line">    username: root</span><br><span class="line">    password: root</span><br><span class="line">    driver-class-name: com.mysql.cj.jdbc.Driver</span><br><span class="line">    # 多数据源配置</span><br><span class="line">    #multi-datasource1:</span><br><span class="line">    #url: jdbc:mysql://localhost:3306/jeecg-boot2?useUnicode=true&amp;characterEncoding=utf8&amp;autoReconnect=true&amp;zeroDateTimeBehavior=convertToNull&amp;transformedBitIsBoolean=true&amp;allowPublicKeyRetrieval=true&amp;serverTimezone=Asia/Shanghai</span><br><span class="line">    #username: root</span><br><span class="line">    #password: root</span><br><span class="line">    #driver-class-name: com.mysql.cj.jdbc.Driver</span><br></pre></td></tr></table></figure>
+
+<p><strong>在144行找到redis 配置 配置你的redis</strong></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">#redis 配置</span><br><span class="line">redis:</span><br><span class="line">  database: 0</span><br><span class="line">  host: 127.0.0.1</span><br><span class="line">  port: 6379</span><br><span class="line">  password: &#x27;&#x27;</span><br></pre></td></tr></table></figure>
+
+<h4 id="第七步，在jeecg-system-start-src-main-java-org-jeecg-JeecgSystemApplication-java找到启动类-jeecg，启动！！！！！！"><a href="#第七步，在jeecg-system-start-src-main-java-org-jeecg-JeecgSystemApplication-java找到启动类-jeecg，启动！！！！！！" class="headerlink" title="第七步，在jeecg-system-start/src/main/java/org/jeecg/JeecgSystemApplication.java找到启动类 jeecg，启动！！！！！！"></a><strong>第七步，在<code>jeecg-system-start/src/main/java/org/jeecg/JeecgSystemApplication.java</code>找到启动类 jeecg，启动！！！！！！</strong></h4><p><img src="https://s2.loli.net/2023/06/25/w6rnH9BQXekIJYD.png" alt="image-20230609163238230"></p>
+<p><strong>启动后可以在http:&#x2F;&#x2F;你的地址（localhost:8080）&#x2F;jeecg-boot&#x2F;doc.html找到并且打开后台接口文档</strong></p>
+<p>注意，如果有程序占用了8080端口请重新配置端口或者关闭占用程序</p>
+<p><strong>控制台出现如下就表示后台成功启动</strong></p>
+<p><img src="https://s2.loli.net/2023/06/25/NscOtflu9VQGJ8h.png" alt="image-20230625141933065"></p>
+<h2 id="前台配置及安装"><a href="#前台配置及安装" class="headerlink" title="前台配置及安装"></a>前台配置及安装</h2><h4 id="第一步，安装-pnpm、-Yarn1-x、Node-js-和-Git"><a href="#第一步，安装-pnpm、-Yarn1-x、Node-js-和-Git" class="headerlink" title="**第一步，安装  pnpm、 Yarn1.x、Node.js 和 Git  **"></a>**第一步，安装  <a target="_blank" rel="noopener" href="https://www.pnpm.cn/">pnpm</a>、 <a target="_blank" rel="noopener" href="https://yarnpkg.com/">Yarn1.x</a>、<a target="_blank" rel="noopener" href="http://nodejs.org/">Node.js</a> 和 <a target="_blank" rel="noopener" href="https://git-scm.com/">Git</a>  **</h4><figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 全局安装pnpm</span></span><br><span class="line"><span class="string">npm</span> <span class="string">install</span> <span class="string">pnpm</span> <span class="string">-g</span></span><br><span class="line"><span class="comment"># 验证（出现对应版本号即代表安装成功）</span></span><br><span class="line"><span class="string">pnpm</span> <span class="string">-v</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 拉取源码</span></span><br><span class="line"><span class="string">git</span> <span class="string">clone</span> <span class="string">https://gitee.com/jeecg/jeecgboot-vue3.git</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 安装依赖</span></span><br><span class="line"><span class="string">pnpm</span> <span class="string">install</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 运行项目</span></span><br><span class="line"><span class="string">pnpm</span> <span class="string">dev</span></span><br></pre></td></tr></table></figure>
+
+<p><strong>成功运行后登录进入后台</strong></p>
+<figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">用户名：</span> <span class="string">admin</span></span><br><span class="line"><span class="string">密码:</span> <span class="number">123456</span></span><br></pre></td></tr></table></figure>
+
+<p><strong>登录成功则表示前后台都配置成功可以开始开发了</strong></p>
+<h2 id="Uin-app-配置及安装"><a href="#Uin-app-配置及安装" class="headerlink" title="Uin-app 配置及安装"></a>Uin-app 配置及安装</h2><h3 id="第一步，安装HBuilderX-下载并解压jeecg-uinapp源码"><a href="#第一步，安装HBuilderX-下载并解压jeecg-uinapp源码" class="headerlink" title="第一步，安装HBuilderX 下载并解压jeecg-uinapp源码"></a>第一步，<strong>安装<a target="_blank" rel="noopener" href="https://www.dcloud.io/hbuilderx.html">HBuilderX</a> 下载并解压<a target="_blank" rel="noopener" href="https://github.com/jeecgboot/jeecg-uniapp">jeecg-uinapp源码</a></strong></h3><p><strong>在HBuilderX中打开源码 选择如下图中随意一个运行</strong></p>
+<p><img src="https://s2.loli.net/2023/06/25/iqjBH76Wdr8bSu4.png">!</p>
+<p><strong>运行成功后自动弹出页面</strong></p>
+<p>以上就是支持demo运行的所有配置</p>
+</article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta">文章作者: </span><span class="post-copyright-info"><a href="https://miku-39.love">九九九感冒绫</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta">文章链接: </span><span class="post-copyright-info"><a href="https://miku-39.love/posts/a8a374ae.html">https://miku-39.love/posts/a8a374ae.html</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta">版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来自 <a href="https://miku-39.love" target="_blank">九九九感冒绫</a>！</span></div></div><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/%E6%8A%80%E6%9C%AF/">技术</a><a class="post-meta__tags" href="/tags/%E7%AC%94%E8%AE%B0/">笔记</a><a class="post-meta__tags" href="/tags/java/">java</a><a class="post-meta__tags" href="/tags/jeecg-boot/">jeecg-boot</a></div><div class="post_share"><div class="social-share" data-image="https://s2.loli.net/2023/06/25/VsgOiHzPrWZ43QI.png" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/js/social-share.min.js" defer></script></div></div><div class="post-reward"><div class="reward-button"><i class="fas fa-qrcode"></i> 打赏</div><div class="reward-main"><ul class="reward-all"><li class="reward-item"><a href="/null" target="_blank"><img class="post-qr-code-img" src="/null" alt="微信"/></a><div class="post-qr-code-desc">微信</div></li><li class="reward-item"><a href="/null" target="_blank"><img class="post-qr-code-img" src="/null" alt="支付宝"/></a><div class="post-qr-code-desc">支付宝</div></li></ul></div></div><nav class="pagination-post" id="pagination"><div class="next-post pull-full"><a href="/posts/8c27c77a.html"><img class="next-cover" src="https://img02.anzhiy.cn/adminuploads/1/2022/09/25/633001374747b.png" onerror="onerror=null;src='/img/404.jpg'" alt="cover of next post"><div class="pagination-info"><div class="label">下一篇</div><div class="next_info">Vue笔记01</div></div></a></div></nav><div class="relatedPosts"><div class="headline"><i class="fas fa-thumbs-up fa-fw"></i><span>相关推荐</span></div><div class="relatedPosts-list"><div><a href="/posts/0.html" title="MyBatis基础"><img class="cover" src="https://s2.loli.net/2023/03/07/eEwM5j14hVv6SNg.png" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2023-03-07</div><div class="title">MyBatis基础</div></div></a></div><div><a href="/posts/35572bee.html" title="Mybatis简单使用"><img class="cover" src="https://s2.loli.net/2023/03/20/RI4QVwyaXeSt8km.png" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2023-03-20</div><div class="title">Mybatis简单使用</div></div></a></div><div><a href="/posts/8c27c77a.html" title="Vue笔记01"><img class="cover" src="https://img02.anzhiy.cn/adminuploads/1/2022/09/25/633001374747b.png" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2023-05-15</div><div class="title">Vue笔记01</div></div></a></div><div><a href="/posts/45c6f3ac.html" title="java: I&#x2F;O流"><img class="cover" src="https://s2.loli.net/2022/10/18/qSFsArT54bzgXJc.jpg" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2023-03-01</div><div class="title">java: I&#x2F;O流</div></div></a></div><div><a href="/posts/a4b62475.html" title="hexo魔改备忘录"><img class="cover" src="https://s2.loli.net/2023/02/09/MV5xHD9qPbFn8sY.png" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2023-02-09</div><div class="title">hexo魔改备忘录</div></div></a></div><div><a href="/posts/fd29bee3.html" title="外挂标签使用指南(针对我自己)"><img class="cover" src="https://s2.loli.net/2022/10/11/fri9QancS8zWbNl.jpg" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2022-10-11</div><div class="title">外挂标签使用指南(针对我自己)</div></div></a></div></div></div><hr/><div id="post-comment"><div class="comment-head"><div class="comment-headline"><i class="fas fa-comments fa-fw"></i><span> 评论</span></div></div><div class="comment-wrap"><div><div id="twikoo-wrap"></div></div></div></div></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="is-center"><div class="avatar-img"><img src="https://s2.loli.net/2022/10/18/soq82lvxakjeHB1.jpg" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info__name">九九九感冒绫</div><div class="author-info__description">永远学习,永远年轻,永远热爱</div></div><div class="card-info-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">15</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">10</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">0</div></a></div><a id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/Luo16-MIKU/"><i class="fab fa-github"></i><span>Github(目前只有博客(小声bb))</span></a></div><div class="card-widget card-announcement"><div id="welcome-info"></div><div class="item-headline"><span>公告</span></div><div class="announcement_content">你好,这里是九九九感冒绫 你可以叫我三九(不是三玖!!)</div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>目录</span><span class="toc-percentage"></span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#Jeecg%E6%98%AF%E4%BB%80%E4%B9%88%EF%BC%9F"><span class="toc-number">1.</span> <span class="toc-text">Jeecg是什么？</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E9%85%8D%E7%BD%AE%E7%8E%AF%E5%A2%83%E5%AE%89%E8%A3%85"><span class="toc-number">2.</span> <span class="toc-text">配置环境安装</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E9%9C%80%E8%A6%81"><span class="toc-number">2.0.0.1.</span> <span class="toc-text">需要!</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%90%8E%E5%8F%B0%E9%85%8D%E7%BD%AE%E5%8F%8A%E5%AE%89%E8%A3%85"><span class="toc-number">2.1.</span> <span class="toc-text">后台配置及安装</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%AC%AC%E4%B8%80%E6%AD%A5%EF%BC%8C-%E4%B8%8B%E8%BD%BD%E6%BA%90%E7%A0%81%E3%80%90%E5%BC%95%E7%94%A8%E3%80%91%E8%A7%A3%E5%8E%8B%E6%BA%90%E7%A0%81%E5%90%8E%E5%AF%BC%E5%85%A5Idea-%E5%85%B6%E4%BB%96%E5%B9%B3%E5%8F%B0%E6%B2%A1%E7%94%A8%E8%BF%87%E4%B8%8D%E5%9C%A8%E6%AD%A4%E6%AC%A1%E7%AC%94%E8%AE%B0"><span class="toc-number">2.1.0.1.</span> <span class="toc-text">第一步， 下载源码【引用】解压源码后导入Idea(其他平台没用过不在此次笔记)</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%AC%AC%E4%BA%8C%E6%AD%A5%EF%BC%8C%E5%9C%A8%E6%9C%80%E5%A4%96%E5%B1%82%E7%9A%84pom-xml%E4%B8%AD%E5%BC%95%E5%85%A5Lombok-%E5%85%88%E7%9C%8B%E7%9C%8B%E6%9C%89%E6%B2%A1%E6%9C%89%E5%86%8D%E5%BC%95%E5%85%A5"><span class="toc-number">2.1.0.2.</span> <span class="toc-text">第二步，在最外层的pom.xml中引入Lombok (先看看有没有再引入)</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%AC%AC%E4%B8%89%E6%AD%A5%EF%BC%8C-%E6%89%93%E5%BC%80%E4%BD%A0%E7%9A%84Maven%E5%AE%89%E8%A3%85%E8%B7%AF%E5%BE%84-conf-settings-xml%E7%BC%96%E8%BE%91Maven%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6settings-xml%E7%84%B6%E5%90%8E%E6%B7%BB%E5%8A%A0"><span class="toc-number">2.1.0.3.</span> <span class="toc-text">第三步， 打开你的Maven安装路径\conf\settings.xml编辑Maven配置文件settings.xml然后添加</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%AC%AC%E5%9B%9B%E6%AD%A5%EF%BC%8C%E7%94%A8mysql%E5%AF%BC%E5%85%A5sql%E6%96%87%E4%BB%B6"><span class="toc-number">2.1.0.4.</span> <span class="toc-text">第四步，用mysql导入sql文件</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%AC%AC%E4%BA%94%E6%AD%A5%EF%BC%8C-%E5%AE%89%E8%A3%85%E5%B9%B6%E6%89%93%E5%BC%80Redis-%E6%80%8E%E4%B9%88%E5%AE%89%E8%A3%85%EF%BC%9F-%E3%80%90redis%E5%9C%B0%E5%9D%80%E3%80%91"><span class="toc-number">2.1.0.5.</span> <span class="toc-text">第五步， 安装并打开Redis 怎么安装？ 【redis地址】</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%AC%AC%E5%85%AD%E6%AD%A5-%E6%89%93%E5%BC%80jeecg-module-system-jeecg-system-start-src-main-resources-application-dev-yml%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6"><span class="toc-number">2.1.0.6.</span> <span class="toc-text">第六步 打开jeecg-module-system&#x2F;jeecg-system-start&#x2F;src&#x2F;main&#x2F;resources&#x2F;application-dev.yml配置文件</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%AC%AC%E4%B8%83%E6%AD%A5%EF%BC%8C%E5%9C%A8jeecg-system-start-src-main-java-org-jeecg-JeecgSystemApplication-java%E6%89%BE%E5%88%B0%E5%90%AF%E5%8A%A8%E7%B1%BB-jeecg%EF%BC%8C%E5%90%AF%E5%8A%A8%EF%BC%81%EF%BC%81%EF%BC%81%EF%BC%81%EF%BC%81%EF%BC%81"><span class="toc-number">2.1.0.7.</span> <span class="toc-text">第七步，在jeecg-system-start&#x2F;src&#x2F;main&#x2F;java&#x2F;org&#x2F;jeecg&#x2F;JeecgSystemApplication.java找到启动类 jeecg，启动！！！！！！</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%89%8D%E5%8F%B0%E9%85%8D%E7%BD%AE%E5%8F%8A%E5%AE%89%E8%A3%85"><span class="toc-number">2.2.</span> <span class="toc-text">前台配置及安装</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%AC%AC%E4%B8%80%E6%AD%A5%EF%BC%8C%E5%AE%89%E8%A3%85-pnpm%E3%80%81-Yarn1-x%E3%80%81Node-js-%E5%92%8C-Git"><span class="toc-number">2.2.0.1.</span> <span class="toc-text">**第一步，安装  pnpm、 Yarn1.x、Node.js 和 Git  **</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Uin-app-%E9%85%8D%E7%BD%AE%E5%8F%8A%E5%AE%89%E8%A3%85"><span class="toc-number">2.3.</span> <span class="toc-text">Uin-app 配置及安装</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%AC%AC%E4%B8%80%E6%AD%A5%EF%BC%8C%E5%AE%89%E8%A3%85HBuilderX-%E4%B8%8B%E8%BD%BD%E5%B9%B6%E8%A7%A3%E5%8E%8Bjeecg-uinapp%E6%BA%90%E7%A0%81"><span class="toc-number">2.3.1.</span> <span class="toc-text">第一步，安装HBuilderX 下载并解压jeecg-uinapp源码</span></a></li></ol></li></ol></li></ol></div></div><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item"><a class="thumbnail" href="/posts/a8a374ae.html" title="Jeecg框架基础配置"><img src="https://s2.loli.net/2023/06/25/VsgOiHzPrWZ43QI.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="Jeecg框架基础配置"/></a><div class="content"><a class="title" href="/posts/a8a374ae.html" title="Jeecg框架基础配置">Jeecg框架基础配置</a><time datetime="2023-06-25T07:12:26.000Z" title="发表于 2023-06-25 15:12:26">2023-06-25</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/posts/8c27c77a.html" title="Vue笔记01"><img src="https://img02.anzhiy.cn/adminuploads/1/2022/09/25/633001374747b.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="Vue笔记01"/></a><div class="content"><a class="title" href="/posts/8c27c77a.html" title="Vue笔记01">Vue笔记01</a><time datetime="2023-05-15T10:08:43.000Z" title="发表于 2023-05-15 18:08:43">2023-05-15</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/posts/da74aa07.html" title="挖坑_博客相关"><img src="https://s2.loli.net/2023/02/08/GJnR1C74rbigBQv.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="挖坑_博客相关"/></a><div class="content"><a class="title" href="/posts/da74aa07.html" title="挖坑_博客相关">挖坑_博客相关</a><time datetime="2023-04-26T07:25:39.000Z" title="发表于 2023-04-26 15:25:39">2023-04-26</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/posts/d607e27b.html" title="Spring基础"><img src="https://s2.loli.net/2023/04/10/Tk5gjpnwtaxq8cK.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="Spring基础"/></a><div class="content"><a class="title" href="/posts/d607e27b.html" title="Spring基础">Spring基础</a><time datetime="2023-04-20T07:24:53.000Z" title="发表于 2023-04-20 15:24:53">2023-04-20</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/posts/97f2d140.html" title="东西能跑就不要改,会变得不幸"><img src="https://s2.loli.net/2023/04/06/vsCA2HJilZQhKGa.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="东西能跑就不要改,会变得不幸"/></a><div class="content"><a class="title" href="/posts/97f2d140.html" title="东西能跑就不要改,会变得不幸">东西能跑就不要改,会变得不幸</a><time datetime="2023-04-06T07:38:36.000Z" title="发表于 2023-04-06 15:38:36">2023-04-06</time></div></div></div></div></div></div></main><footer id="footer"><div id="footer-wrap"><div class="copyright">&copy;2020 - 2023 By 九九九感冒绫</div><div class="framework-info"><span>框架 </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="fas fa-book-open"></i></button><button id="darkmode" type="button" title="浅色和深色模式转换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside_config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="目录"><i class="fas fa-list-ul"></i></button><a id="to_comment" href="#post-comment" title="直达评论"><i class="fas fa-comments"></i></a><button id="go-up" type="button" title="回到顶部"><i class="fas fa-arrow-up"></i></button></div></div><div id="local-search"><div class="search-dialog"><nav class="search-nav"><span class="search-dialog-title">搜索</span><span id="loading-status"></span><button class="search-close-button"><i class="fas fa-times"></i></button></nav><div class="is-center" id="loading-database"><i class="fas fa-spinner fa-pulse"></i><span>  数据库加载中</span></div><div class="search-wrap"><div id="local-search-input"><div class="local-search-box"><input class="local-search-box--input" placeholder="搜索文章" type="text"/></div></div><hr/><div id="local-search-results"></div></div></div><div id="search-mask"></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.umd.min.js"></script><script src="/js/search/local-search.js"></script><script>var preloader = {
+  endLoading: () => {
+    document.body.style.overflow = 'auto';
+    document.getElementById('loading-box').classList.add("loaded")
+  },
+  initLoading: () => {
+    document.body.style.overflow = '';
+    document.getElementById('loading-box').classList.remove("loaded")
+
+  }
+}
+window.addEventListener('load',preloader.endLoading())</script><div class="js-pjax"><script>(()=>{
+  const init = () => {
+    twikoo.init(Object.assign({
+      el: '#twikoo-wrap',
+      envId: 'https://twikoo.miku-39.love/',
+      region: '',
+      onCommentLoaded: function () {
+        btf.loadLightbox(document.querySelectorAll('#twikoo .tk-content img:not(.tk-owo-emotion)'))
+      }
+    }, null))
+  }
+
+  const getCount = () => {
+    const countELement = document.getElementById('twikoo-count')
+    if(!countELement) return
+    twikoo.getCommentsCount({
+      envId: 'https://twikoo.miku-39.love/',
+      region: '',
+      urls: [window.location.pathname],
+      includeReply: false
+    }).then(function (res) {
+      countELement.innerText = res[0].count
+    }).catch(function (err) {
+      console.error(err);
+    });
+  }
+
+  const runFn = () => {
+    init()
+    GLOBAL_CONFIG_SITE.isPost && getCount()
+  }
+
+  const loadTwikoo = () => {
+    if (typeof twikoo === 'object') {
+      setTimeout(runFn,0)
+      return
+    } 
+    getScript('https://cdn.jsdelivr.net/gh/zhheo/twikoo@dev/dist/twikoo.all.min.js').then(runFn)
+  }
+
+  if ('Twikoo' === 'Twikoo' || !true) {
+    if (true) btf.loadComment(document.getElementById('twikoo-wrap'), loadTwikoo)
+    else loadTwikoo()
+  } else {
+    window.loadOtherComment = () => {
+      loadTwikoo()
+    }
+  }
+})()</script></div><script type="text/javascript" src="../js/custom.js"></script><script id="canvas_nest" defer="defer" color="#ff6b81" opacity="0.5" zIndex="-1" count="99" mobile="false" src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/dist/canvas-nest.min.js"></script><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/dist/activate-power-mode.min.js"></script><script id="click-show-text" src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/dist/click-show-text.min.js" data-mobile="true" data-text="MIKU,01,ワールドワン,39,初音ミク,葱娘,公主殿下,さんきゅう" data-fontsize="15px" data-random="true" async="async"></script><script src="https://cdn.jsdelivr.net/npm/pjax/pjax.min.js"></script><script>let pjaxSelectors = ["head > title","#config-diff","#body-wrap","#rightside-config-hide","#rightside-config-show",".js-pjax"]
+
+var pjax = new Pjax({
+  elements: 'a:not([target="_blank"])',
+  selectors: pjaxSelectors,
+  cacheBust: false,
+  analytics: false,
+  scrollRestoration: false
+})
+
+document.addEventListener('pjax:send', function () {
+
+  // removeEventListener scroll 
+  window.tocScrollFn && window.removeEventListener('scroll', window.tocScrollFn)
+  window.scrollCollect && window.removeEventListener('scroll', scrollCollect)
+
+  typeof preloader === 'object' && preloader.initLoading()
+  document.getElementById('rightside').style.cssText = "opacity: ''; transform: ''"
+  
+  if (window.aplayers) {
+    for (let i = 0; i < window.aplayers.length; i++) {
+      if (!window.aplayers[i].options.fixed) {
+        window.aplayers[i].destroy()
+      }
+    }
+  }
+
+  typeof typed === 'object' && typed.destroy()
+
+  //reset readmode
+  const $bodyClassList = document.body.classList
+  $bodyClassList.contains('read-mode') && $bodyClassList.remove('read-mode')
+
+  typeof disqusjs === 'object' && disqusjs.destroy()
+})
+
+document.addEventListener('pjax:complete', function () {
+  window.refreshFn()
+
+  document.querySelectorAll('script[data-pjax]').forEach(item => {
+    const newScript = document.createElement('script')
+    const content = item.text || item.textContent || item.innerHTML || ""
+    Array.from(item.attributes).forEach(attr => newScript.setAttribute(attr.name, attr.value))
+    newScript.appendChild(document.createTextNode(content))
+    item.parentNode.replaceChild(newScript, item)
+  })
+
+  GLOBAL_CONFIG.islazyload && window.lazyLoadInstance.update()
+
+  typeof chatBtnFn === 'function' && chatBtnFn()
+  typeof panguInit === 'function' && panguInit()
+
+  // google analytics
+  typeof gtag === 'function' && gtag('config', '', {'page_path': window.location.pathname});
+
+  // baidu analytics
+  typeof _hmt === 'object' && _hmt.push(['_trackPageview',window.location.pathname]);
+
+  typeof loadMeting === 'function' && document.getElementsByClassName('aplayer').length && loadMeting()
+
+  // prismjs
+  typeof Prism === 'object' && Prism.highlightAll()
+
+  typeof preloader === 'object' && preloader.endLoading()
+})
+
+document.addEventListener('pjax:error', (e) => {
+  if (e.request.status === 404) {
+    pjax.loadUrl('/404.html')
+  }
+})</script><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script></div><!-- hexo injector body_end start --><script data-pjax>
+  function butterfly_clock_anzhiyu_injector_config(){
+    var parent_div_git = document.getElementsByClassName('sticky_layout')[0];
+    var item_html = '<div class="card-widget card-clock"><div class="card-glass"><div class="card-background"><div class="card-content"><div id="hexo_electric_clock"><img class="entered loading" id="card-clock-loading" src="https://cdn.cbd.int/hexo-butterfly-clock-anzhiyu/lib/loading.gif" style="height: 120px; width: 100%;" data-ll-status="loading"/></div></div></div></div></div>';
+    console.log('已挂载butterfly_clock_anzhiyu')
+    if(parent_div_git) {
+      parent_div_git.insertAdjacentHTML("afterbegin",item_html)
+    }
+  }
+  var elist = 'null'.split(',');
+  var cpage = location.pathname;
+  var epage = 'all';
+  var qweather_key = 'ab5ca49f5fcc43dca7301f482b4d6d0f';
+  var gaud_map_key = '59b40b795f380e77d8db50e4861ef89b';
+  var baidu_ak_key = 'undefined';
+  var flag = 0;
+  var clock_rectangle = '112.982279,28.19409';
+  var clock_default_rectangle_enable = 'false';
+
+  for (var i=0;i<elist.length;i++){
+    if (cpage.includes(elist[i])){
+      flag++;
+    }
+  }
+
+  if ((epage ==='all')&&(flag == 0)){
+    butterfly_clock_anzhiyu_injector_config();
+  }
+  else if (epage === cpage){
+    butterfly_clock_anzhiyu_injector_config();
+  }
+  </script><script src="https://widget.qweather.net/simple/static/js/he-simple-common.js?v=2.0"></script><script data-pjax src="https://cdn.cbd.int/hexo-butterfly-clock-anzhiyu/lib/clock.min.js"></script><script data-pjax>
+  function butterfly_footer_beautify_injector_config(){
+    var parent_div_git = document.getElementById('footer-wrap');
+    var item_html = '<div id="workboard"></div><p id="ghbdages"><a class="github-badge" target="_blank" href="https://hexo.io/" style="margin-inline:5px" data-title="博客框架为Hexo_v5.4.0" title=""><img src="https://img.shields.io/badge/Frame-Hexo-blue?style=flat&amp;logo=hexo" alt=""/></a><a class="github-badge" target="_blank" href="https://icp.gov.moe/?keyword=20223988" style="margin-inline:5px" data-title="萌ICP备20223968号" title=""><img src="https://img.shields.io/badge/%E8%90%8CICP%E5%A4%87-20223988-fe1384?style-flat&amp;logo=data:image/png;base64,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" alt=""/></a><a class="github-badge" target="_blank" href="https://butterfly.js.org/" style="margin-inline:5px" data-title="主题版本Butterfly_v4.2.2" title=""><img src="https://img.shields.io/badge/Theme-Butterfly-6513df?style=flat&amp;logo=bitdefender" alt=""/></a><a class="github-badge" target="_blank" href="https://github.com/" style="margin-inline:5px" data-title="本站使用GitHubPage服务静态托管" title=""><img src="https://img.shields.io/badge/Source-Github-d021d6?style=flat&amp;logo=GitHub" alt=""/></a><a class="github-badge" target="_blank" href="http://creativecommons.org/licenses/by-nc-sa/4.0/" style="margin-inline:5px" data-title="本站采用知识共享署名-非商业性使用-相同方式共享4.0国际许可协议进行许可" title=""><img src="https://img.shields.io/badge/Copyright-BY--NC--SA%204.0-d42328?style=flat&amp;logo=Claris" alt=""/></a><a class="github-badge" target="_blank" href="https://anzhiy.cn/" style="margin-inline:5px" data-title="本站源码支持 安知鱼" title=""><img src="https://img.shields.io/badge/%E5%AE%89%E7%9F%A5%E9%B1%BC-anzhiy.cn-yellow" alt=""/></a></p>';
+    console.log('已挂载butterfly_footer_beautify')
+    parent_div_git.insertAdjacentHTML("beforeend",item_html)
+    }
+  var elist = 'null'.split(',');
+  var cpage = location.pathname;
+  var epage = 'all';
+  var flag = 0;
+
+  for (var i=0;i<elist.length;i++){
+    if (cpage.includes(elist[i])){
+      flag++;
+    }
+  }
+
+  if ((epage ==='all')&&(flag == 0)){
+    butterfly_footer_beautify_injector_config();
+  }
+  else if (epage === cpage){
+    butterfly_footer_beautify_injector_config();
+  }
+  </script><script async src="/js/runtime/runtime.js"></script><script data-pjax>
+  function butterfly_swiper_injector_config(){
+    var parent_div_git = document.getElementById('recent-posts');
+    var item_html = '<div class="recent-post-item swiper_container_card" style="height: auto;width: 100%"><div id="random"><div id="random-banner"><canvas id="peoplecanvas"></canvas></div><a id="random-hover" style="width:100%;height:auto;" href="javascript:toRandomPost()" rel="external nofollow noreferrer" one-link-mark="yes"><i class="fa fa-paper-plane" style="margin-left:10px"></i><div style="margin-left:10px">随便逛逛<i class="fa-solid fa-arrow-right" style="margin-left:10px"></i></div></a></div><div class="blog-slider swiper-container-fade swiper-container-horizontal" id="swiper_container"><div class="blog-slider__wrp swiper-wrapper" style="transition-duration: 0ms;"><div class="blog-slider__item swiper-slide" style="width: 750px; opacity: 1; transform: translate3d(0px, 0px, 0px); transition-duration: 0ms;"><a class="blog-slider__img" onclick="pjax.loadUrl(&quot;posts/7db44c5b.html&quot;);" href="javascript:void(0);" alt=""><img width="48" height="48" src="https://s2.loli.net/2023/02/22/Jh3xdwflvkbuaAt.png" alt="" onerror="this.src=https://cdn.cbd.int/akilar-candyassets/image/loading.gif; this.onerror = null;"/></a><div class="blog-slider__content"><span class="blog-slider__code">2023-02-09</span><a class="blog-slider__title" onclick="pjax.loadUrl(&quot;posts/7db44c5b.html&quot;);" href="javascript:void(0);" alt="">实用网站合集</a><div class="blog-slider__text">再怎么看我也不知道怎么描述它的啦！</div><a class="blog-slider__button" onclick="pjax.loadUrl(&quot;posts/7db44c5b.html&quot;);" href="javascript:void(0);" alt="">详情       </a></div></div><div class="blog-slider__item swiper-slide" style="width: 750px; opacity: 1; transform: translate3d(0px, 0px, 0px); transition-duration: 0ms;"><a class="blog-slider__img" onclick="pjax.loadUrl(&quot;posts/bbed5b96.html&quot;);" href="javascript:void(0);" alt=""><img width="48" height="48" src="https://s2.loli.net/2023/02/08/GJnR1C74rbigBQv.jpg" alt="" onerror="this.src=https://cdn.cbd.int/akilar-candyassets/image/loading.gif; this.onerror = null;"/></a><div class="blog-slider__content"><span class="blog-slider__code">2023-02-08</span><a class="blog-slider__title" onclick="pjax.loadUrl(&quot;posts/bbed5b96.html&quot;);" href="javascript:void(0);" alt="">关于我咕咕咕那么久这件事</a><div class="blog-slider__text">再怎么看我也不知道怎么描述它的啦！</div><a class="blog-slider__button" onclick="pjax.loadUrl(&quot;posts/bbed5b96.html&quot;);" href="javascript:void(0);" alt="">详情       </a></div></div><div class="blog-slider__item swiper-slide" style="width: 750px; opacity: 1; transform: translate3d(0px, 0px, 0px); transition-duration: 0ms;"><a class="blog-slider__img" onclick="pjax.loadUrl(&quot;posts/fd29bee3.html&quot;);" href="javascript:void(0);" alt=""><img width="48" height="48" src="https://s2.loli.net/2022/10/11/fri9QancS8zWbNl.jpg" alt="" onerror="this.src=https://cdn.cbd.int/akilar-candyassets/image/loading.gif; this.onerror = null;"/></a><div class="blog-slider__content"><span class="blog-slider__code">2022-10-11</span><a class="blog-slider__title" onclick="pjax.loadUrl(&quot;posts/fd29bee3.html&quot;);" href="javascript:void(0);" alt="">外挂标签使用指南(针对我自己)</a><div class="blog-slider__text">再怎么看我也不知道怎么描述它的啦！</div><a class="blog-slider__button" onclick="pjax.loadUrl(&quot;posts/fd29bee3.html&quot;);" href="javascript:void(0);" alt="">详情       </a></div></div><div class="blog-slider__item swiper-slide" style="width: 750px; opacity: 1; transform: translate3d(0px, 0px, 0px); transition-duration: 0ms;"><a class="blog-slider__img" onclick="pjax.loadUrl(&quot;posts/c92d424b.html&quot;);" href="javascript:void(0);" alt=""><img width="48" height="48" src="https://s1.xptou.com/2022/09/03/63134805e604e.png" alt="" onerror="this.src=https://cdn.cbd.int/akilar-candyassets/image/loading.gif; this.onerror = null;"/></a><div class="blog-slider__content"><span class="blog-slider__code">2022-10-09</span><a class="blog-slider__title" onclick="pjax.loadUrl(&quot;posts/c92d424b.html&quot;);" href="javascript:void(0);" alt="">关于我为什么要做博客</a><div class="blog-slider__text">再怎么看我也不知道怎么描述它的啦！</div><a class="blog-slider__button" onclick="pjax.loadUrl(&quot;posts/c92d424b.html&quot;);" href="javascript:void(0);" alt="">详情       </a></div></div><div class="blog-slider__item swiper-slide" style="width: 750px; opacity: 1; transform: translate3d(0px, 0px, 0px); transition-duration: 0ms;"><a class="blog-slider__img" onclick="pjax.loadUrl(&quot;posts/a4b62475.html&quot;);" href="javascript:void(0);" alt=""><img width="48" height="48" src="https://s2.loli.net/2023/02/09/MV5xHD9qPbFn8sY.png" alt="" onerror="this.src=https://cdn.cbd.int/akilar-candyassets/image/loading.gif; this.onerror = null;"/></a><div class="blog-slider__content"><span class="blog-slider__code">2023-02-09</span><a class="blog-slider__title" onclick="pjax.loadUrl(&quot;posts/a4b62475.html&quot;);" href="javascript:void(0);" alt="">hexo魔改备忘录</a><div class="blog-slider__text">再怎么看我也不知道怎么描述它的啦！</div><a class="blog-slider__button" onclick="pjax.loadUrl(&quot;posts/a4b62475.html&quot;);" href="javascript:void(0);" alt="">详情       </a></div></div><div class="blog-slider__item swiper-slide" style="width: 750px; opacity: 1; transform: translate3d(0px, 0px, 0px); transition-duration: 0ms;"><a class="blog-slider__img" onclick="pjax.loadUrl(&quot;posts/45c6f3ac.html&quot;);" href="javascript:void(0);" alt=""><img width="48" height="48" src="https://s2.loli.net/2022/10/18/qSFsArT54bzgXJc.jpg" alt="" onerror="this.src=https://cdn.cbd.int/akilar-candyassets/image/loading.gif; this.onerror = null;"/></a><div class="blog-slider__content"><span class="blog-slider__code">2023-03-01</span><a class="blog-slider__title" onclick="pjax.loadUrl(&quot;posts/45c6f3ac.html&quot;);" href="javascript:void(0);" alt="">java: I/O流</a><div class="blog-slider__text">再怎么看我也不知道怎么描述它的啦！</div><a class="blog-slider__button" onclick="pjax.loadUrl(&quot;posts/45c6f3ac.html&quot;);" href="javascript:void(0);" alt="">详情       </a></div></div></div><div class="blog-slider__pagination swiper-pagination-clickable swiper-pagination-bullets"></div></div></div>';
+    console.log('已挂载butterfly_swiper')
+    parent_div_git.insertAdjacentHTML("afterbegin",item_html)
+    }
+  var elist = 'undefined'.split(',');
+  var cpage = location.pathname;
+  var epage = '/';
+  var flag = 0;
+
+  for (var i=0;i<elist.length;i++){
+    if (cpage.includes(elist[i])){
+      flag++;
+    }
+  }
+
+  if ((epage ==='all')&&(flag == 0)){
+    butterfly_swiper_injector_config();
+  }
+  else if (epage === cpage){
+    butterfly_swiper_injector_config();
+  }
+  </script><script defer src="https://npm.elemecdn.com/anzhiyu-blog@1.1.6/js/swiper.min.js"></script><script defer data-pjax src="https://cdn.cbd.int/hexo-butterfly-swiper-anzhiyu@1.0.4/lib/swiper_init.js"></script><script data-pjax src="https://lf26-cdn-tos.bytecdntp.com/cdn/expire-1-M/gsap/3.9.1/gsap.min.js"></script><script defer src="https://npm.elemecdn.com/hexo-butterfly-swiper-anzhiyu@1.0.4/lib/people.min.js"></script><script async src="/anzhiyu/random.js"></script><div class="js-pjax"><script async="async">var arr = document.getElementsByClassName('recent-post-item');
+for(var i = 0;i<arr.length;i++){
+    arr[i].classList.add('wow');
+    arr[i].classList.add('animate__zoomIn');
+    arr[i].setAttribute('data-wow-duration', '1.5s');
+    arr[i].setAttribute('data-wow-delay', '200ms');
+    arr[i].setAttribute('data-wow-offset', '30');
+    arr[i].setAttribute('data-wow-iteration', '1');
+  }</script><script async="async">var arr = document.getElementsByClassName('card-widget');
+for(var i = 0;i<arr.length;i++){
+    arr[i].classList.add('wow');
+    arr[i].classList.add('animate__zoomIn');
+    arr[i].setAttribute('data-wow-duration', '');
+    arr[i].setAttribute('data-wow-delay', '200ms');
+    arr[i].setAttribute('data-wow-offset', '');
+    arr[i].setAttribute('data-wow-iteration', '');
+  }</script><script async="async">var arr = document.getElementsByClassName('flink-list-card');
+for(var i = 0;i<arr.length;i++){
+    arr[i].classList.add('wow');
+    arr[i].classList.add('animate__flipInY');
+    arr[i].setAttribute('data-wow-duration', '3s');
+    arr[i].setAttribute('data-wow-delay', '');
+    arr[i].setAttribute('data-wow-offset', '');
+    arr[i].setAttribute('data-wow-iteration', '');
+  }</script><script async="async">var arr = document.getElementsByClassName('flink-list-card');
+for(var i = 0;i<arr.length;i++){
+    arr[i].classList.add('wow');
+    arr[i].classList.add('animate__animated');
+    arr[i].setAttribute('data-wow-duration', '3s');
+    arr[i].setAttribute('data-wow-delay', '');
+    arr[i].setAttribute('data-wow-offset', '');
+    arr[i].setAttribute('data-wow-iteration', '');
+  }</script><script async="async">var arr = document.getElementsByClassName('article-sort-item');
+for(var i = 0;i<arr.length;i++){
+    arr[i].classList.add('wow');
+    arr[i].classList.add('animate__slideInRight');
+    arr[i].setAttribute('data-wow-duration', '1.5s');
+    arr[i].setAttribute('data-wow-delay', '');
+    arr[i].setAttribute('data-wow-offset', '');
+    arr[i].setAttribute('data-wow-iteration', '');
+  }</script><script async="async">var arr = document.getElementsByClassName('site-card');
+for(var i = 0;i<arr.length;i++){
+    arr[i].classList.add('wow');
+    arr[i].classList.add('animate__flipInY');
+    arr[i].setAttribute('data-wow-duration', '3s');
+    arr[i].setAttribute('data-wow-delay', '');
+    arr[i].setAttribute('data-wow-offset', '');
+    arr[i].setAttribute('data-wow-iteration', '');
+  }</script><script async="async">var arr = document.getElementsByClassName('site-card');
+for(var i = 0;i<arr.length;i++){
+    arr[i].classList.add('wow');
+    arr[i].classList.add('animate__animated');
+    arr[i].setAttribute('data-wow-duration', '3s');
+    arr[i].setAttribute('data-wow-delay', '');
+    arr[i].setAttribute('data-wow-offset', '');
+    arr[i].setAttribute('data-wow-iteration', '');
+  }</script></div><script defer src="https://cdn.cbd.int/hexo-butterfly-wowjs/lib/wow.min.js"></script><script defer src="https://cdn.cbd.int/hexo-butterfly-wowjs/lib/wow_init.js"></script><script async src="/js/ali_font.js"></script><script data-pjax src="https://cdn.cbd.int/hexo-filter-gitcalendar/lib/gitcalendar.js"></script><script data-pjax>
+  function gitcalendar_injector_config(){
+      var parent_div_git = document.getElementById('recent-posts');
+      var item_html = '<div class="recent-post-item" id="gitcalendarBar" style="width:100%;height:auto;padding:10px;"><style>#git_container{min-height: 280px}@media screen and (max-width:650px) {#git_container{min-height: 0px}}</style><div id="git_loading" style="width:10%;height:100%;margin:0 auto;display: block;"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 50 50" style="enable-background:new 0 0 50 50" xml:space="preserve"><path fill="#d0d0d0" d="M25.251,6.461c-10.318,0-18.683,8.365-18.683,18.683h4.068c0-8.071,6.543-14.615,14.615-14.615V6.461z" transform="rotate(275.098 25 25)"><animatetransform attributeType="xml" attributeName="transform" type="rotate" from="0 25 25" to="360 25 25" dur="0.6s" repeatCount="indefinite"></animatetransform></path></svg><style>#git_container{display: none;}</style></div><div id="git_container"></div></div>';
+      parent_div_git.insertAdjacentHTML("afterbegin",item_html)
+      console.log('已挂载gitcalendar')
+      }
+
+    if( document.getElementById('recent-posts') && (location.pathname ==='/'|| '/' ==='all')){
+        gitcalendar_injector_config()
+        GitCalendarInit("https://gh.miku-39.love/api?Luo16-MIKU",['#e4dfd7', '#f9f4dc', '#f7e8aa', '#f7e8aa', '#f8df72', '#fcd217', '#fcc515', '#f28e16', '#fb8b05', '#d85916', '#f43e06'],'Luo16-MIKU')
+    }
+  </script><!-- hexo injector body_end end --><script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"debug":false,"model":{"scale":1,"jsonPath":"/live2dw/assets/snow_miku.model.json"},"display":{"width":320,"position":"left","hOffset":-20,"vOffset":60},"mobile":{"show":false,"scale":0.2},"log":false});</script></body></html>
